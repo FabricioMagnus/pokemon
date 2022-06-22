@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import Header from "./Pages/Header";
+import SideBar from "./Pages/SideBar";
+import Navigator from "./Routes/Navigator";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{display: 'flex', width:'100vw', height:'100vh'}} >
+      {/* <Box sx={{ width: '20%', height: '100%', backgroundColor: 'red'}}>        
+        <SideBar/>
+      </Box> */}
+      <Box sx={{ width: '100%', height: '100%', backgroundColor: '#b2b2b2', margin:'auto' }}>
+      <Box sx={{ width: '90%', height: '8%',  margin: 'auto', marginTop:'0.8%', backgroundColor: 'primary.dark', boxShadow: 10,borderRadius:3}}>            
+        <Header/>
+      </Box>
+      </Box>
+           
+    </Box>
+    
   );
 }
 
