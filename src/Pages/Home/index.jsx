@@ -1,20 +1,30 @@
 import React from 'react'
 import {  Box } from "@mui/material";
+import axios from 'axios'
 
 
 function Home () {
-    return (
-        <Box sx={{
-            width: 300,
-            height: '100%',
-            backgroundColor: 'red',
-            boxShadow: 10,
-            '&:hover': {
-            backgroundColor: 'primary.main',
-            opacity: [0.9, 0.8, 0.7],
-            },}}>
-                
+    const [listaPokemon, setListaPokemon] = React.useState([])
+    const [paginacao, setPaginacao] = React.useState()
+    const [paginaAtual, setPaginaAtual] = React.useState(1)
 
+    const buscarPokemon = async () => {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=60`)
+        setListaPokemon(response.data.results)
+    }
+
+    React.useEffect(() => {
+        buscarPokemon()
+    }, [])
+
+    console.log(listaPokemon)
+    return (
+        <Box sx={{ display:'block', justifyContent:'space-around' }}>
+        {listaPokemon.map((pokemon, index) => (
+            <Box sx={{ width: 'fit-content', height: '5%', backgroundColor: 'violet', margin:'10px' }} key={index}>
+                {pokemon.name.toUpperCase()}
+            </Box>
+        ))}
         </Box>
     )
 }

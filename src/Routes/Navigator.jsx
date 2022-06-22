@@ -4,11 +4,16 @@ import React from 'react'
 import Header from '../Pages/Header'
 import Home from '../Pages/Home'
 import SideBar from '../Pages/SideBar'
+import Api from '../API'
+import axios from 'axios'
 
 function Navigator () {
+
+    
+
     return (
              <>                 
-            <Home />
+            <Home  />
              </>      
     )
 }
