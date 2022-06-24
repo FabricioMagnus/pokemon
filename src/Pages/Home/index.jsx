@@ -17,7 +17,7 @@ function Home () {
         buscarPokemon()
     }, [])
 
-    console.log(listaPokemon)
+    // console.log(listaPokemon)
     return (
         <Box sx={{ display:'block', justifyContent:'space-around' }}>
         {listaPokemon.map((pokemon, index) => (
